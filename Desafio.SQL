@@ -24,3 +24,24 @@ DELETE FROM Produtos
 WHERE id_produto IN (104, 107)
 
 ALTER TABLE Produtos ADD sem_estoque boolean;
+
+------------------------Pt 2---------------------------
+
+
+ALTER TABLE Livros
+CHANGE COLUMN data_cliação data_lançamento;
+
+CREATE TABLE Autores (
+    id_autor INT PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(100),
+    data_nascimento date,
+    nascionalidade varchar(100),
+    nome_da_mãe varchar(110),
+    altura_cm decimal(10,2)
+);
+
+INSERT IGNORE INTO Autores (nome, data_nascimento, altura_cm, nascionalidade, nome_da_mãe) VALUES
+('J K Rolling', '1965-10-12', 182, 'Britanica', 'J. K. Mewing'),
+('Lula Inácio da Silva', '1013-12-13', 152, 'Brasileiro', 'Zé pilantra'),
+('Jesus Cristo', '0003-04-12', 185, 'Peruano', 'Ave Mária'),
+('Gustavo Henrique de Oliveira', '2006-09-04', 172, 'Brasileiro', 'Silvia Leticia'),
